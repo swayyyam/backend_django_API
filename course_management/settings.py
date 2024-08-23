@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'courses',
     'rest_framework',
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
@@ -49,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'course_management.urls'
@@ -70,6 +74,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'course_management.wsgi.application'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3002"
+    ]
 
 
 # Database
